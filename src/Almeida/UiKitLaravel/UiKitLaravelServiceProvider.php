@@ -36,35 +36,34 @@ class UiKitLaravelServiceProvider extends ServiceProvider
         // $app->bind('League\OAuth2\Server\Storage\ScopeInterface', 'LucaDegasperi\OAuth2Server\Repositories\FluentScope');
         // $app->bind('League\OAuth2\Server\Storage\SessionInterface', 'LucaDegasperi\OAuth2Server\Repositories\FluentSession');
 
-        $app['uikit.table'] = $app->share(function ($app) {
+        $app['uikit.uikit'] = $app->share(function ($app) {
+            $config = $app['config']->get('almeida/ui-kit-laravel::config');
 
-            // Table/Framework to load
-            $config = $app['config']->get('almeida/ui-kit-laravel::bootstrap');
 
-            // Set __construct($options)
+            // Make table implementation
             $options = array(
                 'paginator' => $config['tables']['paginator']
             );
 
-            // Bind the interfaces to the implementations
-            //$app->bind('Almeida\UxKit\Feedback\FeedbackInterface', $config['feedback']['pattern']['class']);
-
-            // Resolve instance
+            // Make feedback implementation
             $feedback = $app->make($config['feedback']['pattern']['class']);
-            return $app->make($config['tables']['pattern']['class'], array($options, $feedback));
-        });
+            $table    = $app->make($config['tables']['pattern']['class'], array($options, $feedback));
 
-        $app['uikit.feedback'] = $app->share(function ($app) {
+            // Make button implementation
+            $button    = $app->make($config['buttons']['class']);
 
-            dd('@todo');
-            // fetch table config
-            $config = $app['config']->get('almeida/ux-kit-laravel::bootstrap');
-            dd($config);
+            // Make actions implementation
+            $actions = $app->make($config['actions']['class'], array($options, $button));
 
-            $server = $app->make('Namespace\To\Class');
 
-            return $server;
+            // UiKit container
+            $uikit  = $app->make('Almeida\UiKit\UiKit');
 
+            $uikit->Table = $table;
+            $uikit->Button = $button;
+            $uikit->Actions = $actions;
+
+            return $uikit;
         });
 
     }
@@ -76,7 +75,7 @@ class UiKitLaravelServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('uikit.table', 'uikit.feedback');
+        return array('uikit.uikit');
     }
 
 }

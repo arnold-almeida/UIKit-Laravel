@@ -42,7 +42,15 @@ return array(
             'class' => 'Almeida\UiKit\Feedback\Framework\Html5',
         ),
 
-    )
+    ),
+
+    'actions' => array(
+        'class' => 'Almeida\UiKit\Actions\Framework\Html5',
+    ),
+
+    'buttons' => array(
+        'class' => 'Almeida\UiKit\Buttons\Framework\Html5',
+    ),
 
 
 
