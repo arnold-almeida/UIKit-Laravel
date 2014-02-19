@@ -1,0 +1,26 @@
+{
+    "name": "almeida/ui-kit-laravel",
+    "description": "",
+    "authors": [
+        {
+            "name": "Arnold Almeida",
+            "email": "arnold@floatingpoints.com.au"
+        }
+    ],
+    "repositories": [{
+        "type": "vcs",
+        "url": "git@github.com:arnold-almeida/UiKit.git"
+    }],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*",
+        "almeida/ui-kit": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Almeida\\UiKitLaravel": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
+
