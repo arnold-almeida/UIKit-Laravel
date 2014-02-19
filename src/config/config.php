@@ -18,30 +18,11 @@ return array(
         // default : 'Almeida\UiKit\Tables\Framework\Html5'
         // @todo   : 'Almeida\UiKit\Tables\Framework\Foundation'
         // @todo   : 'Almeida\UiKit\Tables\Framework\Bootstrap'
-        'pattern' => array(
-            //'class' => 'Almeida\UiKit\Tables\Framework\Html5',
-            'class' => 'Almeida\UiKit\Tables\Framework\Foundation',
-        ),
-
-        /*
-        |--------------------------------------------------------------------------
-        | Paginator
-        |--------------------------------------------------------------------------
-        |
-        | default   : false
-        | laravel4  : Illuminate\Pagination\Paginator
-        |
-        */
-        'paginator' => 'Illuminate\Pagination\Paginator'
+        'class' => 'Almeida\UiKit\Tables\Framework\Foundation',
     ),
 
     'feedback' => array(
-
-
-        'pattern' => array(
-            'class' => 'Almeida\UiKit\Feedback\Framework\Html5',
-        ),
-
+        'class' => 'Almeida\UiKit\Feedback\Framework\Html5',
     ),
 
     'actions' => array(
@@ -51,6 +32,19 @@ return array(
     'buttons' => array(
         'class' => 'Almeida\UiKit\Buttons\Framework\Html5',
     ),
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Paginator
+    |--------------------------------------------------------------------------
+    |
+    | default   : false
+    | laravel4  : Illuminate\Pagination\Paginator
+    | cakephp   : @todo
+    | symphony  : @todo
+    */
+    'paginator' => 'Illuminate\Pagination\Paginator'
 
 
 

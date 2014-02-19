@@ -37,27 +37,27 @@ class UiKitLaravelServiceProvider extends ServiceProvider
         // $app->bind('League\OAuth2\Server\Storage\SessionInterface', 'LucaDegasperi\OAuth2Server\Repositories\FluentSession');
 
         $app['uikit.uikit'] = $app->share(function ($app) {
-            $config = $app['config']->get('almeida/ui-kit-laravel::config');
 
+            $config = $app['config']->get('almeida/ui-kit-laravel::config');
 
             // Make table implementation
             $options = array(
-                'paginator' => $config['tables']['paginator']
+                'paginator' => $config['paginator']
             );
 
             // Make feedback implementation
-            $feedback = $app->make($config['feedback']['pattern']['class']);
-            $table    = $app->make($config['tables']['pattern']['class'], array($options, $feedback));
+            $feedback = $app->make($config['feedback']['class']);
+            $table = $app->make($config['tables']['class'], array($options, $feedback));
 
             // Make button implementation
-            $button    = $app->make($config['buttons']['class']);
+            $button = $app->make($config['buttons']['class']);
 
             // Make actions implementation
             $actions = $app->make($config['actions']['class'], array($options, $button));
 
 
             // UiKit container
-            $uikit  = $app->make('Almeida\UiKit\UiKit');
+            $uikit = $app->make('Almeida\UiKit\UiKit');
 
             $uikit->Table = $table;
             $uikit->Button = $button;
