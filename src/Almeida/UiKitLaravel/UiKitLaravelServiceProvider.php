@@ -55,13 +55,17 @@ class UiKitLaravelServiceProvider extends ServiceProvider
             // Make actions implementation
             $actions = $app->make($config['actions']['class'], array($options, $button));
 
+            // Make button_groups implementation
+            $buttonGroup = $app->make($config['button_groups']['class']);
+
 
             // UiKit container
             $uikit = $app->make('Almeida\UiKit\UiKit');
 
-            $uikit->Table = $table;
-            $uikit->Button = $button;
-            $uikit->Actions = $actions;
+            $uikit->Table       = $table;
+            $uikit->Button      = $button;
+            $uikit->ButtonGroup = $buttonGroup;
+            $uikit->Actions     = $actions;
 
             return $uikit;
         });

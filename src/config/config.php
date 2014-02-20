@@ -33,6 +33,10 @@ return array(
         'class' => 'Almeida\UiKit\Buttons\Framework\Html5',
     ),
 
+    'button_groups' => array(
+        'class' => 'Almeida\UiKit\ButtonGroups\Framework\Bootstrap',
+    ),
+
 
     /*
     |--------------------------------------------------------------------------
