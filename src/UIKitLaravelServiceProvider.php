@@ -48,19 +48,21 @@ class UIKitLaravelServiceProvider extends ServiceProvider
                 'paginator' => 'Illuminate\Pagination\Paginator'
             );
 
+
+
             // Make feedback implementation
-            $feedback = $app->make('Almeida\UIKit\Feedback\Framework\Html5');
-            $table = $app->make('Almeida\UIKit\Tables\Framework\Foundation', array($options, $feedback));
+            $feedback    = $app->make('Almeida\UIKit\Collections\Feedback\Feedback');
+
+            $table       = $app->make('Almeida\UIKit\Collections\Tables\Table', array($options, $feedback));
 
             // Make button implementation
-            $button = $app->make('Almeida\UIKit\Buttons\Framework\Html5');
+            $button      = $app->make('Almeida\UIKit\Elements\Button\Button');
 
             // Make actions implementation
-            $actions = $app->make('Almeida\UIKit\Actions\Framework\Bootstrap', array($options, $button));
+            $actions     = $app->make('Almeida\UIKit\Collections\Actions\Actions', array($options, $button));
 
             // Make button_groups implementation
-            $buttonGroup = $app->make('Almeida\UIKit\ButtonGroups\Framework\Bootstrap');
-
+            $buttonGroup = $app->make('Almeida\UIKit\Collections\ButtonGroups\ButtonGroup', array($options, $actions));
 
             // UiKit container
             $uikit = $app->make('Almeida\UIKit\UIKit');
