@@ -21,8 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Almeida\\UIKitLaravel\\": "src",
-            "Almeida\\UIKitLaravel\\Tests": "tests"
+            "": "src"
         }
     },
     "minimum-stability": "dev"
