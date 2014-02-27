@@ -40,23 +40,26 @@ class UIKitLaravelServiceProvider extends ServiceProvider
 
             $config = $app['config']->get('almeida/ui-kit-laravel::config');
 
+            //dd(get_class($app['config']));
+            //dd($app['config']->get('almeida/ui-kit-laravel::config'));
+
             // Make table implementation
             $options = array(
-                'paginator' => $config['paginator']
+                'paginator' => 'Illuminate\Pagination\Paginator'
             );
 
             // Make feedback implementation
-            $feedback = $app->make($config['feedback']['class']);
-            $table = $app->make($config['tables']['class'], array($options, $feedback));
+            $feedback = $app->make('Almeida\UIKit\Feedback\Framework\Html5');
+            $table = $app->make('Almeida\UIKit\Tables\Framework\Foundation', array($options, $feedback));
 
             // Make button implementation
-            $button = $app->make($config['buttons']['class']);
+            $button = $app->make('Almeida\UIKit\Buttons\Framework\Html5');
 
             // Make actions implementation
-            $actions = $app->make($config['actions']['class'], array($options, $button));
+            $actions = $app->make('Almeida\UIKit\Actions\Framework\Bootstrap', array($options, $button));
 
             // Make button_groups implementation
-            $buttonGroup = $app->make($config['button_groups']['class']);
+            $buttonGroup = $app->make('Almeida\UIKit\ButtonGroups\Framework\Bootstrap');
 
 
             // UiKit container
