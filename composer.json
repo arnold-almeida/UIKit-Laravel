@@ -17,8 +17,8 @@
         "almeida/ui-kit": "*"
     },
     "autoload": {
-        "psr-0": {
-            "Almeida\\UiKitLaravel": "src/"
+        "psr-4": {
+            "Almeida\\UiKitLaravel\\": "src/"
         }
     },
     "minimum-stability": "dev"
