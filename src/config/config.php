@@ -19,6 +19,20 @@ return array(
         // @todo   : 'Almeida\UiKit\Tables\Framework\Foundation'
         // @todo   : 'Almeida\UiKit\Tables\Framework\Bootstrap'
         'class' => 'Almeida\UiKit\Tables\Framework\Foundation',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Pagination View
+        |--------------------------------------------------------------------------
+        |
+        | This view will be used to render the pagination link output, and can
+        | be easily customized here to show any view you like. A clean view
+        | compatible with Twitter's Bootstrap is given to you by default.
+        |
+        */
+
+        'pagination' => 'pagination::slider-3',
+
     ),
 
     'feedback' => array(
