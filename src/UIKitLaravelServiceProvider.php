@@ -3,7 +3,7 @@ namespace Almeida\UIKitLaravel;
 
 use Illuminate\Support\ServiceProvider;
 
-class UiKitLaravelServiceProvider extends ServiceProvider
+class UIKitLaravelServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -60,7 +60,7 @@ class UiKitLaravelServiceProvider extends ServiceProvider
 
 
             // UiKit container
-            $uikit = $app->make('Almeida\UIKit\UiKit');
+            $uikit = $app->make('Almeida\UIKit\UIKit');
 
             $uikit->Table       = $table;
             $uikit->Button      = $button;

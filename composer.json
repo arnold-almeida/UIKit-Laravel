@@ -1,6 +1,9 @@
 {
     "name": "almeida/ui-kit-laravel",
     "description": "Laravel implemention for UiKit",
+    "keywords": [
+        "laravel"
+    ],
     "authors": [
         {
             "name": "Arnold Almeida",
@@ -18,7 +21,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Almeida\\UiKitLaravel\\": "src/"
+            "Almeida\\UIKitLaravel\\": "src",
+            "Almeida\\UIKitLaravel\\Tests": "tests"
         }
     },
     "minimum-stability": "dev"
