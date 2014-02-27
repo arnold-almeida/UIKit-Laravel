@@ -1,5 +1,5 @@
 <?php
-namespace Almeida\UiKitLaravel;
+namespace Almeida\UIKitLaravel;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -60,7 +60,7 @@ class UiKitLaravelServiceProvider extends ServiceProvider
 
 
             // UiKit container
-            $uikit = $app->make('Almeida\UiKit\UiKit');
+            $uikit = $app->make('Almeida\UIKit\UiKit');
 
             $uikit->Table       = $table;
             $uikit->Button      = $button;

@@ -15,10 +15,10 @@ return array(
     'tables' => array(
 
         // Table pattern to use
-        // default : 'Almeida\UiKit\Tables\Framework\Html5'
-        // @todo   : 'Almeida\UiKit\Tables\Framework\Foundation'
-        // @todo   : 'Almeida\UiKit\Tables\Framework\Bootstrap'
-        'class' => 'Almeida\UiKit\Tables\Framework\Foundation',
+        // default : 'Almeida\UIKit\Tables\Framework\Html5'
+        // @todo   : 'Almeida\UIKit\Tables\Framework\Foundation'
+        // @todo   : 'Almeida\UIKit\Tables\Framework\Bootstrap'
+        'class' => 'Almeida\UIKit\Tables\Framework\Foundation',
 
         /*
         |--------------------------------------------------------------------------
@@ -36,19 +36,19 @@ return array(
     ),
 
     'feedback' => array(
-        'class' => 'Almeida\UiKit\Feedback\Framework\Html5',
+        'class' => 'Almeida\UIKit\Feedback\Framework\Html5',
     ),
 
     'actions' => array(
-        'class' => 'Almeida\UiKit\Actions\Framework\Html5',
+        'class' => 'Almeida\UIKit\Actions\Framework\Html5',
     ),
 
     'buttons' => array(
-        'class' => 'Almeida\UiKit\Buttons\Framework\Html5',
+        'class' => 'Almeida\UIKit\Buttons\Framework\Html5',
     ),
 
     'button_groups' => array(
-        'class' => 'Almeida\UiKit\ButtonGroups\Framework\Bootstrap',
+        'class' => 'Almeida\UIKit\ButtonGroups\Framework\Bootstrap',
     ),
 
 

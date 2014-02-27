@@ -1,9 +1,9 @@
 <?php
-namespace Almeida\UiKitLaravel\Facades;
+namespace Almeida\UIKitLaravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class UiKit extends Facade
+class UIKit extends Facade
 {
 
     /**
