@@ -58,8 +58,11 @@ class UIKitLaravelServiceProvider extends ServiceProvider
             // Make button implementation
             $button      = $app->make('Almeida\UIKit\Elements\Button\Button');
 
+            // Make link implementation
+            $link      = $app->make('Almeida\UIKit\Elements\Link\Link');
+
             // Make actions implementation
-            $actions     = $app->make('Almeida\UIKit\Collections\Actions\Actions', array($options, $button));
+            $actions     = $app->make('Almeida\UIKit\Collections\Actions\Actions', array($options, $button, $link));
 
             // Make button_groups implementation
             $buttonGroup = $app->make('Almeida\UIKit\Collections\ButtonGroups\ButtonGroup', array($options, $actions));
