@@ -48,8 +48,6 @@ class UIKitLaravelServiceProvider extends ServiceProvider
                 'paginator' => 'Illuminate\Pagination\Paginator'
             );
 
-
-
             // Make feedback implementation
             $feedback    = $app->make('Almeida\UIKit\Collections\Feedback\Feedback');
 
@@ -59,7 +57,10 @@ class UIKitLaravelServiceProvider extends ServiceProvider
             $button      = $app->make('Almeida\UIKit\Elements\Button\Button');
 
             // Make link implementation
-            $link      = $app->make('Almeida\UIKit\Elements\Link\Link');
+            $link        = $app->make('Almeida\UIKit\Elements\Link\Link');
+
+            // Make typography implementation
+            $typography  = $app->make('Almeida\UIKit\Elements\Typography\Typography');
 
             // Make actions implementation
             $actions     = $app->make('Almeida\UIKit\Collections\Actions\Actions', array($options, $button, $link));
@@ -68,12 +69,7 @@ class UIKitLaravelServiceProvider extends ServiceProvider
             $buttonGroup = $app->make('Almeida\UIKit\Collections\ButtonGroups\ButtonGroup', array($options, $actions));
 
             // UiKit container
-            $uikit = $app->make('Almeida\UIKit\UIKit');
-
-            $uikit->Table       = $table;
-            $uikit->Button      = $button;
-            $uikit->ButtonGroup = $buttonGroup;
-            $uikit->Actions     = $actions;
+            $uikit = $app->make('Almeida\UIKit\UIKit', array($typography, $table, $button, $buttonGroup, $actions));
 
             return $uikit;
         });
