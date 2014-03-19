@@ -1,18 +1,19 @@
 {
-    "name": "almeida/ui-kit-laravel",
-    "description": "Laravel implemention for UiKit",
-    "keywords": [
-        "laravel"
-    ],
-    "authors": [
-        {
-            "name": "Arnold Almeida",
-            "email": "arnold@floatingpoints.com.au"
-        }
-    ],
+    "name"        : "almeida/ui-kit-laravel",
+    "description" : "Laravel implemention for almeida/ui-kit",
+    "type"        : "library",
+    "homepage"    : "https://github.com/xxxx",
+    "keywords"    : ["ui-kit", "frontend", "generators", "laravel"],
+    "license"     : "MIT",
+    "authors": [{
+        "name"     : "Arnold Almeida",
+        "email"    : "arnold@floatingpoints.com.au",
+        "homepage" : "http://floatingpoints.com.au",
+        "role"     : "Developer"
+    }],
     "repositories": [{
         "type": "vcs",
-        "url": "git@github.com:arnold-almeida/UiKit.git"
+        "url": "git@github.com:arnold-almeida/UIKit.git"
     }],
     "require": {
         "php": ">=5.3.0",

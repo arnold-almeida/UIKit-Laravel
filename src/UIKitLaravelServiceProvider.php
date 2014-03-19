@@ -34,10 +34,6 @@ class UIKitLaravelServiceProvider extends ServiceProvider
         /**
          * Tell the app which implementaions we want bound to the interface by default
          */
-        // $app->bind('League\OAuth2\Server\Storage\ClientInterface', 'LucaDegasperi\OAuth2Server\Repositories\FluentClient');
-        // $app->bind('League\OAuth2\Server\Storage\ScopeInterface', 'LucaDegasperi\OAuth2Server\Repositories\FluentScope');
-        // $app->bind('League\OAuth2\Server\Storage\SessionInterface', 'LucaDegasperi\OAuth2Server\Repositories\FluentSession');
-
         $app['uikit.uikit'] = $app->share(function ($app) {
 
             $config = $app['config']->get('almeida/ui-kit-laravel::config');
