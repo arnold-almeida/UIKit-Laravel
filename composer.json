@@ -1,7 +1,6 @@
 {
     "name"        : "almeida/ui-kit-laravel",
     "description" : "Laravel implemention for almeida/ui-kit",
-    "type"        : "library",
     "homepage"    : "https://github.com/xxxx",
     "keywords"    : ["ui-kit", "frontend", "generators", "laravel"],
     "license"     : "MIT",
@@ -11,14 +10,10 @@
         "homepage" : "http://floatingpoints.com.au",
         "role"     : "Developer"
     }],
-    "repositories": [{
-        "type": "vcs",
-        "url": "git@github.com:arnold-almeida/UIKit.git"
-    }],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.4.0",
         "illuminate/support": "4.1.*",
-        "almeida/ui-kit": "*"
+        "almeida/ui-kit": "0.1.*"
     },
     "autoload": {
         "psr-4": {
