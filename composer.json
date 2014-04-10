@@ -1,25 +1,26 @@
 {
-    "name"        : "almeida/ui-kit-laravel",
-    "description" : "Laravel implemention for almeida/ui-kit",
-    "homepage"    : "https://github.com/xxxx",
-    "keywords"    : ["ui-kit", "frontend", "generators", "laravel"],
-    "license"     : "MIT",
-    "authors": [{
-        "name"     : "Arnold Almeida",
-        "email"    : "arnold@floatingpoints.com.au",
-        "homepage" : "http://floatingpoints.com.au",
-        "role"     : "Developer"
-    }],
-    "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "4.1.*",
-        "almeida/ui-kit": "0.1.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Almeida\\UIKitLaravel\\": "src"
-        }
-    },
-    "minimum-stability": "dev"
+	"name"        : "almeida/ui-kit-laravel",
+	"description" : "Laravel driver for almeida/ui-kit",
+	"homepage"    : "https://github.com/arnold-almeida/UIKit-Laravel",
+	"keywords"    : ["ui-kit", "frontend", "generators", "laravel"],
+	"license"     : "MIT",
+	"authors": [{
+		"name"     : "Arnold Almeida",
+		"email"    : "arnold@floatingpoints.com.au",
+		"homepage" : "http://floatingpoints.com.au",
+		"role"     : "Developer"
+	}],
+	"require": {
+		"php": ">=5.4.0",
+		"illuminate/support": "4.1.*",
+		"illuminate/html": "4.1.*",
+		"almeida/ui-kit": "0.1.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Almeida\\UIKitLaravel\\": "src"
+		}
+	},
+	"minimum-stability": "dev"
 }
 

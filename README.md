@@ -10,9 +10,9 @@ Pull this package in through Composer.
 
 ```js
 {
-    "require": {
-        "almeida/ui-kit-laravel": "0.1.*"
-    }
+	"require": {
+		"almeida/ui-kit-laravel": "0.1.*"
+	}
 }
 ```
 
@@ -27,13 +27,31 @@ Quick guide
 
 ```php
 
-    // Render a table
+	// Render a table
 
-    $table = UIKit::table($rows);
-    echo $table->render();
+	$table = UIKit::table($rows);
+	echo $table->render();
 
-    // Render a h1 tag
-    UIKit::header('Some heading');
+	// Render a h1 tag
+	UIKit::header('Some heading');
+
+```
+
+Forms
+
+This package extends the base Form class so it should provide bootstrap suport out of the box
+for all your Form elements.
+
+```php
+
+	// Currently supported
+
+	{{ Form::text() }}
+	{{ Form::checkbox() }}
+	{{ Form::radio() }}
+	{{ Form::submit() }}
+
+
 
 ```
 
