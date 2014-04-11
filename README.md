@@ -1,58 +1,72 @@
-# Laravel UI Kit
+# UIKit Laravel
 
-Just a laravel wrapper to get [UIKit](https://github.com/arnold-almeida/UiKit) working.
+Just a Laravel driver to get [UIKit](https://github.com/arnold-almeida/UIKit) working.
 
 Super alpha release. Suggestions welcome
 
-## Install
+### Installation via Composer
 
-Pull this package in through Composer.
+Add UIKit to your composer.json file to require Authority
 
-```js
-{
-	"require": {
-		"almeida/ui-kit-laravel": "0.1.*"
+	require : {
+		"almeida/ui-kit-laravel" : "dev-master"
 	}
-}
-```
 
-## Todo
+Now update Composer
 
-- [ ] Write up how to
-- [ ] Write tests
+	composer update
 
-## Usage
-
-Quick guide
+The last **required** step is to add the service provider to `app/config/app.php`
 
 ```php
+	'Almeida\UIKitLaravel\UIKitLaravelServiceProvider',
+```
 
-	// Render a table
+UIKit should now be avaliable in your application.
 
-	$table = UIKit::table($rows);
-	echo $table->render();
+You can access the UIKit through the static interface you are used to with Laravel components.
 
-	// Render a h1 tag
+```php
 	UIKit::header('Some heading');
-
 ```
 
-Forms
 
-This package extends the base Form class so it should provide bootstrap suport out of the box
-for all your Form elements.
+
+### Additional (optional) Configuration Options
+
+##### Extend the FormBuilder to render Twitter Bootstrap inputs and buttons
 
 ```php
+	'Almeida\UIKitLaravel\HtmlServiceProvider',
+```
 
-	// Currently supported
+No need to change any markup. The items below will all render with the correct bootstrap markup.
+
+
+```php
 
 	{{ Form::text() }}
 	{{ Form::checkbox() }}
 	{{ Form::radio() }}
 	{{ Form::submit() }}
 
-
-
 ```
 
-More ... [Docs](https://github.com/arnold-almeida/UIKit/tree/master/docs)
+
+### Todo
+
+- [ ] Write up how to
+- [ ] Examples
+- [ ] Write tests
+
+### How to :
+
+#### Tables
+
+
+``` php
+
+	$table = UIKit::table($rows, $options);
+	echo $table->render();
+```
+
