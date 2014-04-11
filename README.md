@@ -66,7 +66,58 @@ No need to change any markup. The items below will all render with the correct b
 
 ``` php
 
+	// 1.0 - Make sure data is transformed for output
+
+		// Elquoent collection, Paginator
+		$data;
+
+		// Format data for presentation to give us...
+		$rows = array(
+			array(
+				'id' => 1,
+				'name' => 'John Doe',
+				'gender' => 'Male',
+			),
+			array(
+				'id' => 2,
+				'name' => 'Jane Doe',
+				'gender' => 'Female',
+			),
+		);
+
+	// 2.0 - Configure how you want the table to behave
+	$options = array(
+		// @todo - What do we display when there is no data
+		'behaviours' => array(
+			'no-data' => array(
+				'icon' => 'User',
+				'message' => "No users found",
+				'subtext' => array(
+					'label' => 'Create a new User',
+					'url' => '/admin/users/create'
+				),
+			)
+		),
+		// Add's a sort link <th><a>
+		// match on keys
+		'sort' => array(
+			'name'   => 'name',
+			'gender'    => 'gender',
+		),
+		// Pass in query manually for now.
+		// Its a bit tricky to autodetect framework and use relevant env objects
+		'query' => Request::query()
+	);
+
+	// 3.0 - Build the table
 	$table = UIKit::table($rows, $options);
+
+	// 4.0 -  Render the table
 	echo $table->render();
+
+	// 5.0 - (Optional) Print pagination
+	$pagination = $table->pagination($data, $options);
+
+
 ```
 
