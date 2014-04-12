@@ -31,28 +31,6 @@ You can access the UIKit through the static interface you are used to with Larav
 ```
 
 
-
-### Additional (optional) Configuration Options
-
-##### Extend the FormBuilder to render Twitter Bootstrap inputs and buttons
-
-```php
-	'Almeida\UIKitLaravel\HtmlServiceProvider',
-```
-
-No need to change any markup. The items below will all render with the correct bootstrap markup.
-
-
-```php
-
-	{{ Form::text() }}
-	{{ Form::checkbox() }}
-	{{ Form::radio() }}
-	{{ Form::submit() }}
-
-```
-
-
 ### Todo
 
 - [ ] Write up how to
@@ -121,3 +99,22 @@ No need to change any markup. The items below will all render with the correct b
 
 ```
 
+#### Forms
+
+##### Extend the FormBuilder to render Twitter Bootstrap inputs and buttons
+
+```php
+	'Almeida\UIKitLaravel\HtmlServiceProvider',
+```
+
+No need to change any markup. The items below will all render with the correct bootstrap markup.
+
+
+```php
+
+	{{ Form::text() }}
+	{{ Form::checkbox() }}
+	{{ Form::radio() }}
+	{{ Form::submit() }}
+
+```
