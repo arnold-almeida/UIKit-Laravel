@@ -6,7 +6,7 @@ Super alpha release. Suggestions welcome
 
 ### Installation via Composer
 
-Add UIKit to your composer.json file to require Authority
+Add UIKit to your composer.json file to require UIKit
 
 	require : {
 		"almeida/ui-kit-laravel" : "dev-master"
