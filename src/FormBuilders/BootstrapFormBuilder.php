@@ -16,6 +16,19 @@ class BootstrapFormBuilder extends IlluminateFormBuilder
 		'static'      => false,
 	);
 
+	/**
+	 * Natural way of indicating emphasis
+	 * @var array
+	 */
+	public $feedback = array(
+		'default',
+		'primary',
+		'success',
+		'info',
+		'warning',
+		'danger'
+	);
+
 
 	/**
 	 * Form::select()
@@ -81,12 +94,19 @@ class BootstrapFormBuilder extends IlluminateFormBuilder
 		return $this->checkable('radio', $name, $value, $checked, $options);
 	}
 
+
+
 	/**
 	 * Form::submit()
 	 */
 	public function submit($value = null, $options = array())
 	{
 		$options['class'] = 'btn btn-default';
+
+		if (isset($options['feedback']) && in_array($options['feedback'], $this->feedback)) {
+			$options['class'] = 'btn btn-'.$options['feedback'];
+		}
+
 		return parent::submit($value, $options);
 	}
 
