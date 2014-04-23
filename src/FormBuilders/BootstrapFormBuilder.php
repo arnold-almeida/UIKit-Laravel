@@ -32,13 +32,38 @@ class BootstrapFormBuilder extends IlluminateFormBuilder
 
 	/**
 	 * Form::select()
+	 *
+	 * $options['empty'] Automatically prepend an element to the start of the list
+	 *
 	 */
 	public function select($name, $list = array(), $selected = null, $options = array())
 	{
 		$options['class'] = 'form-control';
 		$wrap['class']    = 'form-group';
 
-		$label = parent::label($name, null, []);
+		// Item to prepend to $list
+		if (isset($options['empty'])) {
+			if (empty($options['empty'])) {
+				$empty = array('' => '');
+				$list = $empty + $list;
+			} else {
+				$list = array('' => $options['empty']) + $list;
+			}
+		}
+
+		if (isset($options['name'])) {
+			$label = $options['name'];
+		} else {
+			$label = $name;
+		}
+
+		$label = parent::label($label, null, []);
+
+		// @todo - Look into
+		// Weird, the input name is being inferred from the label even
+		// though $name is directly specified
+		// force via $options['name'] for now
+		$options['name'] = $name;
 		$input = parent::select($name, $list, $selected, $options);
 
 		return $this->wrap($label.$input, $wrap);
