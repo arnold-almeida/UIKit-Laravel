@@ -1,0 +1,233 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>README</title></head><body><h1 id="uikit-laravel">UIKit Laravel</h1>
+<p>Just a Laravel driver to get <a href="https://github.com/arnold-almeida/UIKit">UIKit</a> working.</p>
+<p>Super alpha release. Suggestions welcome</p>
+<h3 id="installation-via-composer">Installation via Composer</h3>
+<p>Add UIKit to your composer.json file to require UIKit</p>
+<pre><code>require : {
+    "almeida/ui-kit-laravel" : "dev-master"
+}
+</code></pre>
+<p>Now update Composer</p>
+<pre><code>composer update
+</code></pre>
+<p>The last <strong>required</strong> step is to add the service provider to <code>app/config/app.php</code></p>
+<pre><code class="php">    'Almeida\UIKitLaravel\UIKitLaravelServiceProvider',
+</code></pre>
+
+<p>UIKit should now be avaliable in your application.</p>
+<p>You can access the UIKit through the static interface you are used to with Laravel components.</p>
+<pre><code class="php">    UIKit::header('Some heading');
+</code></pre>
+
+<h3 id="todo">Todo</h3>
+<ul>
+<li>[ ] Write up how to</li>
+<li>[ ] Examples</li>
+<li>[ ] Write tests</li>
+</ul>
+<h3 id="how-to">How to :</h3>
+<h4 id="tables">Tables</h4>
+<p>Dangerzone:
+ - Probably going to seperate Pagination from Tables soon</p>
+<ul>
+<li>Probably going to render the table directly from UIKit::table($rows, $options)</li>
+</ul>
+<pre><code class="php">
+    // 1.0 - Make sure data is transformed for output
+
+        // Elquoent collection, Paginator
+        $data;
+
+        // Format data for presentation to give us...
+        $rows = array(
+            array(
+                'id' =&gt; 1,
+                'name' =&gt; 'John Doe',
+                'gender' =&gt; 'Male',
+            ),
+            array(
+                'id' =&gt; 2,
+                'name' =&gt; 'Jane Doe',
+                'gender' =&gt; 'Female',
+            ),
+        );
+
+    // 2.0 - Configure how you want the table to behave
+    $options = array(
+        // @todo - What do we display when there is no data
+        'behaviours' =&gt; array(
+            'no-data' =&gt; array(
+                'icon' =&gt; 'User',
+                'message' =&gt; &quot;No users found&quot;,
+                'subtext' =&gt; array(
+                    'label' =&gt; 'Create a new User',
+                    'url' =&gt; '/admin/users/create'
+                ),
+            )
+        ),
+        // Add's a sort link &lt;th&gt;&lt;a&gt;
+        // match on keys
+        'sort' =&gt; array(
+            'name'   =&gt; 'name',
+            'gender'    =&gt; 'gender',
+        ),
+        // Pass in query manually for now.
+        // Its a bit tricky to autodetect framework and use relevant env objects
+        'query' =&gt; Request::query()
+    );
+
+    // 3.0 - Build the table
+    $table = UIKit::table($rows, $options);
+
+    // 4.0 -  Render the table
+    echo $table-&gt;render();
+
+    // 5.0 - (Optional) Print pagination
+    $pagination = $table-&gt;pagination($data, $options);
+
+
+</code></pre>
+
+<h4 id="forms">Forms</h4>
+<h5 id="extend-the-formbuilder-to-render-twitter-bootstrap-inputs-and-buttons">Extend the FormBuilder to render Twitter Bootstrap inputs and buttons</h5>
+<pre><code class="php">    'Almeida\UIKitLaravel\HtmlServiceProvider',
+</code></pre>
+
+<p>No need to change any markup. The items below will all render with the correct bootstrap markup.</p>
+<pre><code class="php">
+    {{ Form::text() }}
+    {{ Form::checkbox() }}
+    {{ Form::radio() }}
+    {{ Form::submit() }}
+</code></pre>
+
+<p>Add emphasis to your buttons</p>
+<pre><code class="php">
+    {{ Form::submit('Delete', ['feedback' =&gt; 'danger']) }}
+</code></pre>
+
+<p>Multiple checkboxes</p>
+<pre><code class="php">    {{ Form::mutiple('roles', $list=[], $selected=[], $options=[]) }}
+</code></pre></body></html>

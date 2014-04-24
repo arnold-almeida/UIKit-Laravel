@@ -41,6 +41,11 @@ You can access the UIKit through the static interface you are used to with Larav
 
 #### Tables
 
+**!! Dangerzone !!!**
+ - Probably going to seperate Pagination from Tables soon
+
+ - Probably going to render the table directly from UIKit::table($rows, $options)
+
 
 ``` php
 
@@ -116,5 +121,18 @@ No need to change any markup. The items below will all render with the correct b
 	{{ Form::checkbox() }}
 	{{ Form::radio() }}
 	{{ Form::submit() }}
-
 ```
+
+Add emphasis to your buttons
+
+```php
+
+	{{ Form::submit('Delete', ['feedback' => 'danger']) }}
+```
+
+Multiple checkboxes
+
+```php
+	{{ Form::mutiple('roles', $list=[], $selected=[], $options=[]) }}
+```
+
