@@ -31,6 +31,60 @@ class BootstrapFormBuilder extends IlluminateFormBuilder
 
 
 	/**
+	 * Form::multiple()
+	 *
+	 * Easy mutiple checkboxes
+	 *
+	 * @todo - Add some sexy
+	 *       http://stackoverflow.com/questions/10887893/twitter-bootstrap-checkbox-columns-columns-within-form
+	 *
+	 * @param  string $name      name of checkbox group, use plural. ie. roles, categories etc.
+	 * @param  array  $list      eg. Model::lists('title', 'id')
+	 * @param  array  $selected  array of selected ids
+	 * @param  array  $options
+	 */
+	public function multiple($name, $list = array(), $selected = array(), $options = array())
+	{
+		$defaults = [
+			'type' => 'checkbox',
+			'valid' => ['checkbox', 'select']
+		];
+		$options = array_merge($defaults, $options);
+		$wrap['class']    = 'form-group';
+
+		if ($options['type'] == 'select') {
+			dd('@todo pass to $this->select() ?');
+		}
+
+		$boxes = [];
+
+		foreach ($list as $checkboxValue => $checkboxLabel) {
+
+			$checked = (in_array($checkboxValue, $selected));
+			$input   = parent::checkbox($name.'[]', $checkboxValue, $checked);
+
+			$checkbox = '';
+			$checkbox.='<label class="checkbox">'
+			  .$input
+			  .$checkboxLabel
+			.'</label>';
+			$boxes[] = $checkbox;
+		}
+
+		// Assign a label from the name
+		$label = $name;
+		if (isset($options['label'])) {
+			$label = $options['label'];
+		}
+
+		$label   = parent::label($label, null, []);
+		$mutiple = implode(PHP_EOL, $boxes);
+
+		return $this->wrap($label.$mutiple, $wrap);
+	}
+
+
+	/**
 	 * Form::select()
 	 *
 	 * $options['empty'] Automatically prepend an element to the start of the list
