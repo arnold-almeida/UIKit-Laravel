@@ -41,9 +41,11 @@ class UIKitLaravelServiceProvider extends ServiceProvider
             //dd(get_class($app['config']));
             //dd($app['config']->get('almeida/ui-kit-laravel::config'));
 
-            // Make table implementation
+            // Add in framework tools
             $options = array(
-                'paginator' => 'Illuminate\Pagination\Paginator'
+            	'framework' => [
+            		'Paginator' => 'Illuminate\Pagination\Paginator'
+            	]
             );
 
             // UiKit container
