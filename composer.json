@@ -14,7 +14,7 @@
 		"php": ">=5.4.0",
 		"illuminate/support": "4.1.*",
 		"illuminate/html": "4.1.*",
-		"almeida/ui-kit": "0.1.*"
+		"almeida/ui-kit": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
