@@ -148,6 +148,30 @@ class BootstrapFormBuilder extends IlluminateFormBuilder
 	}
 
 	/**
+	 * Form::textarea()
+	 * Form::textarea($name, $value, array('static' => true))
+	 */
+	public function textarea($name, $value=null, $options=array())
+	{
+		$this->options = array_merge($this->options, $options);
+
+		$inputOptions['class'] = 'form-control';
+		$wrap['class']    = 'form-group';
+
+
+		$label = parent::label($name, $value, $options);
+
+		if ($this->options['static'] == true) {
+			$value = $this->guessFormValue('textarea', $name, $value);
+			$input = '<p class="form-control-static">'.$value.'</p>';
+		} else {
+			$input = parent::textarea($name, $value, $inputOptions);
+		}
+
+		return $this->wrap($label.$input, $wrap);
+	}
+
+	/**
 	 * Form::checkbox()
 	 */
 	public function checkbox($name, $value = 1, $checked = null, $options = array())
